@@ -11,3 +11,9 @@ services:
     container_name: kibana-01
     restart: unless-stopped
     entrypoint: "sleep infinity"
+
+  logstash:
+    image: pycontribs/ubuntu
+    container_name: logstash-01
+    restart: unless-stopped
+    entrypoint: "sleep infinity"

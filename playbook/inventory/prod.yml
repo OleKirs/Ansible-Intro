@@ -7,3 +7,7 @@
     hosts:
       kibana-01:
         ansible_connection: docker
+  logstash:
+    hosts:
+      logstash-01:
+        ansible_connection: docker
