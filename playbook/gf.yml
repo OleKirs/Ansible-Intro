@@ -2,15 +2,19 @@
   hosts: all
   tasks:
     - name: Get infos on container
-      community.docker.docker_container_info:
-        name: elastic-01
+#      community.docker.docker_container_info:
+      ansible.builtin.shell: hostname --ip-address
+#      args:
+#        executable: /bin/bash
+#           name: elastic-01
       register: result
     
-    - name: Does container exist?
-      ansible.builtin.debug:
-        msg: "The container {{ 'exists' if result.exists else 'does not exist' }}"
+#    - name: Does container exist?
+#      ansible.builtin.debug:
+#        msg: "The container {{ 'exists' if result.exists else 'does not exist' }}"
     
     - name: Print information about container
       ansible.builtin.debug:
-        var: result.container
-      when: result.exists
+#        var: result.container
+        var: result.stdout
+#      when: result.exists

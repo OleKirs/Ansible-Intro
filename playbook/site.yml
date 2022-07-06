@@ -118,6 +118,14 @@
         dest: /etc/profile.d/kib.sh
         mode: '0755'
       tags: kibana
+- name: Install Elasticsearch
+  hosts: elasticsearch
+  tasks:
+    - name: Get IP address for elastic host
+      ansible.builtin.shell: hostname -I
+      register: elastic_ip_address
+      tags:
+        - logstash
 - name: Install Logstash
   hosts: logstash
   tasks:
@@ -155,4 +163,10 @@
         src: templates/logstash.sh.j2
         dest: /etc/profile.d/logstash.sh
         mode: '0755'
+      tags: logstash
+    - name: Set config logstash
+      ansible.builtin.template:
+        src: templates/logstash.conf.j2
+        dest: "{{ logstash_home }}/logstash.conf"
+        mode: '0644'
       tags: logstash
