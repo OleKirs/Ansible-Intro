@@ -16,7 +16,7 @@
       until: download_java_binaries is succeeded
       tags:
         - java
-        - never
+#        - never
     - name: Ensure installation dir exists
       become: true
       ansible.builtin.file:
@@ -56,7 +56,7 @@
       until: get_elastic is succeeded
       tags:
         - elastic
-        - never
+#        - never
     - name: Create directrory for Elasticsearch
       ansible.builtin.file:
         state: directory
@@ -95,7 +95,7 @@
       until: get_kibana is succeeded
       tags:
         - kibana
-        - never
+ #       - never
     - name: Create directrory for Kibana ({{ kibana_home }})
       ansible.builtin.file:
         path: "{{ kibana_home }}"
@@ -133,7 +133,7 @@
       until: get_logstash is succeeded
       tags:
         - logstash
-        - never
+#        - never
     - name: Create directrory for logstash ({{ logstash_home }})
       ansible.builtin.file:
         path: "{{ logstash_home }}"
