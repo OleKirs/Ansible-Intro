@@ -380,7 +380,7 @@ root@deb11-test50:~/Ansible-Intro/playbook#
 
 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
   
-[README.md](https://github.com/OleKirs/Ansible-Intro/tree/master/playbook)
+[README.md](https://github.com/OleKirs/Ansible-Intro/blob/master/playbook/README.md)
   
 10. Готовый playbook выложите в свой репозиторий, в ответ предоставьте ссылку на него.
   
